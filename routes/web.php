@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('nodes', 'NodeController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
