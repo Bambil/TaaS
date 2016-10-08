@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>TaaS (Things as a Service)</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,7 +79,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/AoLab/I1820">I1820 Middleware</a>
+                    <a href="https://aolab.github.io/">AoLab</a>
+                    <a href="https://aolab.github.io/I1820">I1820 Middleware</a>
                     <a href="https://github.com/AoLab/TaaS">GitHub</a>
                 </div>
             </div>
