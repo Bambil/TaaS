@@ -16,9 +16,9 @@ class DockerHelper
         $this->docker = new Docker();
     }
 
-    function createImage($imageName) {
+    function createNewI1820() {
         $this->docker->getImageManager()->create(null, [
-            'fromImage' => "$imageName:latest"
+            'fromImage' => "aolab/i1820:latest"
         ]);
     }
 }
