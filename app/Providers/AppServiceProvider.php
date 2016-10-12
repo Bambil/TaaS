@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\DockerHelper;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('DockerHelper', function () {
-            return new \DockerHelper();
+            return new DockerHelper();
         });
 
     }

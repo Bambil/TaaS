@@ -5,6 +5,7 @@
  * Date: 10/10/16
  * Time: 3:48 PM
  */
+namespace App;
 
 use Docker\API\Model\ContainerConfig;
 use Docker\API\Model\HostConfig;
