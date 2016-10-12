@@ -9,7 +9,6 @@ namespace App;
 
 use Docker\API\Model\ContainerConfig;
 use Docker\Docker;
-use Docker\DockerClient;
 
 class DockerHelper
 {
