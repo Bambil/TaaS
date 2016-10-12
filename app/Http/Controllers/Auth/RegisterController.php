@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Docker\Docker;
+use DockerHelper;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -37,7 +37,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct(\DockerHelper $helper)
+    public function __construct(DockerHelper $helper)
     {
         $this->middleware('guest');
         $this->helper = $helper;

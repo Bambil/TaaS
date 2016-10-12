@@ -660,6 +660,54 @@
             "time": "2014-09-09 13:34:57"
         },
         {
+            "name": "fitbug/symfony-yaml-serializer-encoder-decoder",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fitbug/symfony-yaml-serializer-encoder-decoder.git",
+                "reference": "de3279ae69a80ddcef2559dbdb89a72f33caf5b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fitbug/symfony-yaml-serializer-encoder-decoder/zipball/de3279ae69a80ddcef2559dbdb89a72f33caf5b1",
+                "reference": "de3279ae69a80ddcef2559dbdb89a72f33caf5b1",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/serializer": "^v2.0.0 || ^3.0.0",
+                "symfony/yaml": "^v2.0.0 || ^3.0.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^2.0.0 || ^3.0.0",
+                "squizlabs/php_codesniffer": "^2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fitbug\\SymfonySerializer\\YamlEncoderDecoder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Billie Thompson",
+                    "email": "billie.thompson@fitbug.com"
+                }
+            ],
+            "description": "A encoder and decoder for Yaml for the Symfony Serializer Component.",
+            "keywords": [
+                "encoder",
+                "serializer",
+                "symfony",
+                "symfony-serializer",
+                "yaml"
+            ],
+            "time": "2016-08-12 14:15:24"
+        },
+        {
             "name": "guzzlehttp/psr7",
             "version": "1.3.1",
             "source": {
@@ -865,36 +913,37 @@
         },
         {
             "name": "jane/open-api",
-            "version": "v1.2.1",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/janephp/openapi.git",
-                "reference": "189aafaec2b2ff1ef1519c8d6a2f09ac4b85d4e9"
+                "reference": "4146c2d837669907695107be9cb0ffae529c176e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/janephp/openapi/zipball/189aafaec2b2ff1ef1519c8d6a2f09ac4b85d4e9",
-                "reference": "189aafaec2b2ff1ef1519c8d6a2f09ac4b85d4e9",
+                "url": "https://api.github.com/repos/janephp/openapi/zipball/4146c2d837669907695107be9cb0ffae529c176e",
+                "reference": "4146c2d837669907695107be9cb0ffae529c176e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "^1.0",
-                "jane/jane": "^1.2.0",
+                "fitbug/symfony-yaml-serializer-encoder-decoder": "^0.1.1",
+                "jane/jane": "^1.5",
+                "jane/openapi-runtime": "^1.0",
                 "nikic/php-parser": "^1.4|^2.0",
-                "php-http/httplug": "^1.0",
-                "php-http/message-factory": "^1.0",
                 "symfony/console": "^2.3|^3.0",
-                "symfony/options-resolver": "^2.7|^3.0"
+                "symfony/yaml": "^2.8.2 | ^3.0"
             },
             "conflict": {
-                "fabpot/php-cs-fixer": "<2.0"
+                "friendsofphp/php-cs-fixer": "<2.0.0-alpha|>2.0.0-alpha"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "^2.0@dev",
-                "phpunit/phpunit": "^4.7"
+                "friendsofphp/php-cs-fixer": "v2.0.0-alpha",
+                "phpunit/phpunit": "^4.7",
+                "sllh/php-cs-fixer-styleci-bridge": "^2.1"
             },
             "suggest": {
-                "fabpot/php-cs-fixer": "To have a nice formatting of the generated files"
+                "friendsofphp/php-cs-fixer": "To have a nice formatting of the generated files"
             },
             "bin": [
                 "bin/jane-openapi"
@@ -928,7 +977,50 @@
                 "openapi",
                 "swagger"
             ],
-            "time": "2016-04-13 19:16:20"
+            "time": "2016-09-08 13:14:02"
+        },
+        {
+            "name": "jane/openapi-runtime",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/janephp/openapi-runtime.git",
+                "reference": "1ee03abfa7d6ed00e4b025b20bdb220ea15770e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/janephp/openapi-runtime/zipball/1ee03abfa7d6ed00e4b025b20bdb220ea15770e9",
+                "reference": "1ee03abfa7d6ed00e4b025b20bdb220ea15770e9",
+                "shasum": ""
+            },
+            "require": {
+                "jane/runtime": "^1.0",
+                "php-http/client-common": "^1.1",
+                "php-http/httplug": "^1.0",
+                "php-http/message-factory": "^1.0.2",
+                "symfony/options-resolver": "^2.7|^3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.7|^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Joli\\Jane\\OpenApi\\Runtime\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joel Wurtz",
+                    "email": "jwurtz@jolicode.com"
+                }
+            ],
+            "description": "Jane OpenAPI Runtime Library, dependencies and utility class for a library generated by jane/openapi",
+            "time": "2016-09-01 15:57:08"
         },
         {
             "name": "jane/runtime",
@@ -1029,16 +1121,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.16",
+            "version": "v5.3.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9932861dee0fef30138f9839102fb00ddd6ddce1"
+                "reference": "9bee167d173857c25966c19afdaa66f127ca6784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9932861dee0fef30138f9839102fb00ddd6ddce1",
-                "reference": "9932861dee0fef30138f9839102fb00ddd6ddce1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9bee167d173857c25966c19afdaa66f127ca6784",
+                "reference": "9bee167d173857c25966c19afdaa66f127ca6784",
                 "shasum": ""
             },
             "require": {
@@ -1153,20 +1245,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-10-04 16:05:47"
+            "time": "2016-10-08 01:51:20"
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.27",
+            "version": "1.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "50e2045ed70a7e75a5e30bc3662904f3b67af8a9"
+                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/50e2045ed70a7e75a5e30bc3662904f3b67af8a9",
-                "reference": "50e2045ed70a7e75a5e30bc3662904f3b67af8a9",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
+                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
                 "shasum": ""
             },
             "require": {
@@ -1236,7 +1328,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-08-10 08:55:11"
+            "time": "2016-10-07 12:20:37"
         },
         {
             "name": "monolog/monolog",
@@ -2058,16 +2150,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2193,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-09-19 16:02:08"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "psy/psysh",
@@ -3443,6 +3535,55 @@
             "time": "2016-09-29 14:13:09"
         },
         {
+            "name": "symfony/yaml",
+            "version": "v3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/368b9738d4033c8b93454cb0dbd45d305135a6d3",
+                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-09-25 08:27:07"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -4249,16 +4390,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.5.6",
+            "version": "5.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "146e0fe0bb7f44d1cefade0c93e86fe0b206dd79"
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/146e0fe0bb7f44d1cefade0c93e86fe0b206dd79",
-                "reference": "146e0fe0bb7f44d1cefade0c93e86fe0b206dd79",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60c32c5b5e79c2248001efa2560f831da11cc2d7",
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7",
                 "shasum": ""
             },
             "require": {
@@ -4292,7 +4433,6 @@
                 "ext-pdo": "*"
             },
             "suggest": {
-                "ext-tidy": "*",
                 "ext-xdebug": "*",
                 "phpunit/php-invoker": "~1.1"
             },
@@ -4302,7 +4442,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.5.x-dev"
+                    "dev-master": "5.6.x-dev"
                 }
             },
             "autoload": {
@@ -4328,20 +4468,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-10-03 07:48:45"
+            "time": "2016-10-07 13:03:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.3.1",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "03500345483e1e17b52e2e4d34a89c9408ab2902"
+                "reference": "238d7a2723bce689c79eeac9c7d5e1d623bb9dc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/03500345483e1e17b52e2e4d34a89c9408ab2902",
-                "reference": "03500345483e1e17b52e2e4d34a89c9408ab2902",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/238d7a2723bce689c79eeac9c7d5e1d623bb9dc2",
+                "reference": "238d7a2723bce689c79eeac9c7d5e1d623bb9dc2",
                 "shasum": ""
             },
             "require": {
@@ -4387,7 +4527,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-10-04 11:03:26"
+            "time": "2016-10-09 07:01:45"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5010,55 +5150,6 @@
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
             "time": "2016-08-05 08:37:39"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v3.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/368b9738d4033c8b93454cb0dbd45d305135a6d3",
-                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-09-25 08:27:07"
         },
         {
             "name": "webmozart/assert",
