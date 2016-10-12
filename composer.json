@@ -10,7 +10,8 @@
         "docker-php/docker-php": "^1.24",
         "nategood/httpful": "^0.2.20",
         "predis/predis": "^1.1",
-        "webpatser/laravel-uuid": "^2.0"
+        "webpatser/laravel-uuid": "^2.0",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
