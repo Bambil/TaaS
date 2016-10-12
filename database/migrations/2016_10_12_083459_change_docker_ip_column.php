@@ -14,7 +14,7 @@ class ChangeDockerIpColumn extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->renameColumn('docker_ip', 'docker_name');
+            $table->renameColumn('docker_ip', 'docker_id');
         });
     }
 
@@ -26,7 +26,7 @@ class ChangeDockerIpColumn extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->renameColumn('docker_name', 'docker_ip');
+            $table->renameColumn('docker_id', 'docker_ip');
         });
     }
 }
