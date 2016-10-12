@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\DockerHelper;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
 class NodeController extends Controller
 {
+    private $helper;
+
+    public function __construct(DockerHelper $dockerHelper)
+    {
+        $this->helper = $dockerHelper;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +55,8 @@ class NodeController extends Controller
      */
     public function show($id)
     {
-        //
+        $response = \Httpful\Request::get($this->helper->findContainerIp($id))->send();
+        return $response->body;
     }
 
     /**
