@@ -10,6 +10,7 @@ namespace App;
 use Docker\API\Model\ContainerConfig;
 use Docker\API\Model\HostConfig;
 use Docker\Docker;
+use Docker\Docker\DockerClient;
 use Webpatser\Uuid\Uuid;
 
 class DockerHelper
@@ -18,7 +19,10 @@ class DockerHelper
 
     function __construct()
     {
-        $this->docker = new Docker();
+        $client = new DockerClient([
+            'remote_socket' => 'tcp://' . config('docker.host') . ':' . config('docker.port'),
+        ]);
+        $this->docker = new Docker($client);
     }
 
     function getManager() {
