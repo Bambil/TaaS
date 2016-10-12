@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return redirect()->action('NodeController@show', ['id', $user->docker_id]);
+        return redirect()->action('NodeController@show', [$user->docker_id]);
     }
 }
