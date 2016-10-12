@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\DockerHelper;
 use App\User;
-use DockerHelper;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
