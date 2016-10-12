@@ -39,7 +39,7 @@ class DockerHelper
         return $containerCreateResult->getId();
     }
 
-    function findContainerIp() {
+    function findContainerIp($containerId) {
 
     }
 

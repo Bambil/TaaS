@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('DockerHelper', function () {
+            return new \DockerHelper();
+        });
+
     }
+
 }
