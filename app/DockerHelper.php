@@ -8,10 +8,8 @@
 namespace App;
 
 use Docker\API\Model\ContainerConfig;
-use Docker\API\Model\HostConfig;
 use Docker\Docker;
-use Docker\Docker\DockerClient;
-use Webpatser\Uuid\Uuid;
+use Docker\DockerClient;
 
 class DockerHelper
 {
