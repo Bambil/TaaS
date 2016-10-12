@@ -17,10 +17,7 @@ class DockerHelper
 
     function __construct()
     {
-        $client = new DockerClient([
-            'remote_socket' => 'tcp://' . config('docker.host') . ':' . config('docker.port'),
-        ]);
-        $this->docker = new Docker($client);
+        $this->docker = new Docker();
     }
 
     function getManager() {
@@ -30,14 +27,14 @@ class DockerHelper
     function createNewMiddleware() {
         $containerConfig = new ContainerConfig();
         $containerConfig->setImage(config('middleware.image'));
+        $containerCreateResult = $this->getManager()->create($containerConfig);
 
+        $this->getManager()->start($containerCreateResult->getId());
         if(config('middleware.name') == 'I1820') {
             $containerConfig->setEnv('I1820_INFLUXDB_HOST', config('middleware.db_host'));
         }
 
         // Create and run container
-        $containerCreateResult = $this->getManager()->create($containerConfig);
-        $this->getManager()->start($containerCreateResult->getId());
 
         return $containerCreateResult->getId();
     }
