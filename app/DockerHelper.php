@@ -29,10 +29,11 @@ class DockerHelper
         $containerConfig->setImage(config('middleware.image'));
         $containerCreateResult = $this->getManager()->create($containerConfig);
 
-        $this->getManager()->start($containerCreateResult->getId());
         if(config('middleware.name') == 'I1820') {
             $containerConfig->setEnv('I1820_INFLUXDB_HOST', config('middleware.db_host'));
         }
+
+        $this->getManager()->start($containerCreateResult->getId());
 
         // Create and run container
 
