@@ -40,7 +40,7 @@ class DockerHelper
     }
 
     function findContainerIp($containerId) {
-
+        return $this->getManager()->find($containerId)->getNetworkSettings()->getIPAddress();
     }
 
 }
