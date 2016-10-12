@@ -30,14 +30,17 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/home';
 
+    private $helper;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(\DockerHelper $helper)
     {
         $this->middleware('guest');
+        $this->helper = $helper;
     }
 
     /**
@@ -61,9 +64,9 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data, \DockerHelper $helper)
+    protected function create(array $data)
     {
-        $containerId = $helper->createNewMiddleware();
+        $containerId = $this->helper->createNewMiddleware();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
