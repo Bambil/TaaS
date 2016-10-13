@@ -88,6 +88,7 @@
     <script src="/js/bootstrap.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js"></script>
+    <script   src="http://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous"></script>
     @yield('footer')
 </body>
 </html>
