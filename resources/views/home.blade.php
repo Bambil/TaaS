@@ -26,9 +26,9 @@
                     </thead>
                     <tbody>
                     <tr v-for="device in devices">
-                        <td>{{device.id}}</td>
-                        <td>{{device.ip}}</td>
-                        <td>{{device.timeago}}</td>
+                        <td>@{{device.id}}</td>
+                        <td>@{{device.ip}}</td>
+                        <td>@{{device.timeago}}</td>
                     </tr>
                     </tbody>
                 </table>
