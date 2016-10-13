@@ -55,7 +55,6 @@ class NodeController extends Controller
      */
     public function show($id)
     {
-        \Httpful\Request::get();
         return view('home');
     }
 
