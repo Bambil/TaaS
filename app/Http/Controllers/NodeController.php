@@ -55,8 +55,7 @@ class NodeController extends Controller
      */
     public function show($id)
     {
-        $response = \Httpful\Request::get($this->helper->findContainerIp($id))->send();
-        return $response->body;
+        return view('home');
     }
 
     /**
