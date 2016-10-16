@@ -42,15 +42,16 @@
         var app = new Vue({
             el: '#app',
 
-            created: function () {
-                this.refresh()
-            },
-
             refresh: function () {
                 $.get('discovery', function (data, status) {
                     app.devices = JSON.parse(data)
                 })
             },
+
+            created: function () {
+                this.refresh()
+            },
+
 
             data: {
                 devices: [
