@@ -9,6 +9,7 @@ namespace App;
 
 use Docker\API\Model\ContainerConfig;
 use Docker\Docker;
+use Webpatser\Uuid\Uuid;
 
 class DockerHelper
 {
@@ -28,15 +29,20 @@ class DockerHelper
         $containerConfig->setImage(config('middleware.image'));
         $containerCreateResult = $this->getManager()->create($containerConfig);
 
+        $apiKey = Uuid::generate();
+
         if(config('middleware.name') == 'I1820') {
             $containerConfig->setEnv('I1820_INFLUXDB_HOST', config('middleware.db_host'));
+            $containerConfig->setEnv('I1820_MQTT_HOST', config('middleware.mqtt_host'));
+            $containerConfig->setEnv('I1820_MQTT_PORT', config('middleware.mqtt_port'));
+            $containerConfig->setEnv('I1820_ENDPOINTS', $apiKey);
         }
 
         $this->getManager()->start($containerCreateResult->getId());
 
         // Create and run container
 
-        return $containerCreateResult->getId();
+        return [$containerCreateResult->getId(), $apiKey];
     }
 
     function findContainerIp($containerId) {
