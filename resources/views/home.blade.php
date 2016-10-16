@@ -26,9 +26,9 @@
                     </thead>
                     <tbody>
                     <tr v-for="device in devices">
-                        <td>@{{device.id}}</td>
                         <td>@{{device.ip}}</td>
-                        <td>@{{device.timeago}}</td>
+                        <td>@{{device.ip}}</td>
+                        <td>@{{device.time}}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -41,15 +41,25 @@
     <script>
         var app = new Vue({
             el: '#app',
+
+            created: function () {
+                this.refresh()
+            },
+
+            refresh: function () {
+                $.get('discovery', function (data, status) {
+                    app.devices = JSON.parse(data)
+                })
+            },
+
             data: {
                 devices: [
-                    {
-                        id: "1231",
-                        ip: "192.168.1.1",
-                        timeago: "2 minutes"
-                    }
                 ],
             }
         })
+
+
+
+
     </script>
 @endsection
