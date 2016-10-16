@@ -1650,21 +1650,21 @@
         },
         {
             "name": "php-http/client-common",
-            "version": "v1.2.1",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/client-common.git",
-                "reference": "10891ee2378bba00e27d3fc81f4f14f519ef2138"
+                "reference": "999cb9c512934c7db899b8f232df499b1860e20f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/client-common/zipball/10891ee2378bba00e27d3fc81f4f14f519ef2138",
-                "reference": "10891ee2378bba00e27d3fc81f4f14f519ef2138",
+                "url": "https://api.github.com/repos/php-http/client-common/zipball/999cb9c512934c7db899b8f232df499b1860e20f",
+                "reference": "999cb9c512934c7db899b8f232df499b1860e20f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
-                "php-http/httplug": "^1.0",
+                "php-http/httplug": "^1.1",
                 "php-http/message": "^1.2",
                 "php-http/message-factory": "^1.0",
                 "symfony/options-resolver": "^2.6 || ^3.0"
@@ -1681,7 +1681,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -1707,7 +1707,7 @@
                 "http",
                 "httplug"
             ],
-            "time": "2016-07-26 17:48:34"
+            "time": "2016-10-16 07:03:13"
         },
         {
             "name": "php-http/discovery",
