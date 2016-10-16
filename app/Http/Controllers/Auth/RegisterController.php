@@ -7,6 +7,7 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Webpatser\Uuid\Uuid;
 
 class RegisterController extends Controller
 {
@@ -72,7 +73,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'docker_id' => $result[0],
-            'api_key' => $result[1]
+            'api_key' => (string) $result[1]
+
         ]);
     }
 }
