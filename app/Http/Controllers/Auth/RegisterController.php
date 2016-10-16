@@ -66,12 +66,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $containerId = $this->helper->createNewMiddleware();
+        $result = $this->helper->createNewMiddleware();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'docker_id' => $containerId
+            'docker_id' => $result[0],
+            'api_key' => $result[1]
         ]);
     }
 }
