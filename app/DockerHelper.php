@@ -20,21 +20,23 @@ class DockerHelper
         $this->docker = new Docker();
     }
 
-    function getManager() {
+    function getManager()
+    {
         return $this->docker->getContainerManager();
     }
 
-    function createNewMiddleware() {
+    function createNewMiddleware()
+    {
         $containerConfig = new ContainerConfig();
         $containerConfig->setImage(config('middleware.image'));
 
         $apiKey = Uuid::generate();
 
-        if(config('middleware.name') == 'I1820') {
-            $containerConfig->setEnv('I1820_INFLUXDB_HOST', config('middleware.db_host'));
-            $containerConfig->setEnv('I1820_MQTT_HOST', config('middleware.mqtt_host'));
-            $containerConfig->setEnv('I1820_MQTT_PORT', config('middleware.mqtt_port'));
-            $containerConfig->setEnv('I1820_ENDPOINTS', $apiKey);
+        if (config('middleware.name') == 'I1820') {
+            $containerConfig->setEnv("\'[" . 'I1820_INFLUXDB_HOST' . '=' . config('middleware.db_host' . "]\'"));
+            $containerConfig->setEnv("\'[" . 'I1820_MQTT_HOST' . '=' . config('middleware.mqtt_host' . "]\'"));
+            $containerConfig->setEnv('"\'[" . I1820_MQTT_PORT' . '=' . config('middleware.mqtt_port' . "]\'"));
+            $containerConfig->setEnv('"\'[" . I1820_ENDPOINTS' . '=' . $apiKey . "]\'");
         }
 
         $containerCreateResult = $this->getManager()->create($containerConfig);
@@ -45,7 +47,8 @@ class DockerHelper
         return [$containerCreateResult->getId(), $apiKey];
     }
 
-    function findContainerIp($containerId) {
+    function findContainerIp($containerId)
+    {
         return $this->getManager()->find($containerId)->getNetworkSettings()->getIPAddress();
     }
 
