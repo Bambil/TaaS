@@ -27,7 +27,6 @@ class DockerHelper
     function createNewMiddleware() {
         $containerConfig = new ContainerConfig();
         $containerConfig->setImage(config('middleware.image'));
-        $containerCreateResult = $this->getManager()->create($containerConfig);
 
         $apiKey = Uuid::generate();
 
@@ -38,6 +37,7 @@ class DockerHelper
             $containerConfig->setEnv('I1820_ENDPOINTS', $apiKey);
         }
 
+        $containerCreateResult = $this->getManager()->create($containerConfig);
         $this->getManager()->start($containerCreateResult->getId());
 
         // Create and run container

@@ -43,7 +43,7 @@
             el: '#app',
 
             refresh: function () {
-                $.get('discovery', function (data, status) {
+                $.get('http://iot.ceit.aut.ac.ir:58902/discovery', function (data, status) {
                     app.devices = JSON.parse(data)
                 })
             },
