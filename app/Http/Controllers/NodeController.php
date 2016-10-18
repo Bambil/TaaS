@@ -56,9 +56,8 @@ class NodeController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        $dockerIp = $this->helper->findContainerIp($user->docker_id);
-        $response = \Httpful\Request::get("http://" . $dockerIp)->expectsJson()->send();
+        $dockerIp = $this->helper->findContainerIp($id);
+        $response = \Httpful\Request::get("http://" . $dockerIp . ":8080/discovery")->expectsJson()->send();
         return view('home')->with('devices', $response->body);
     }
 

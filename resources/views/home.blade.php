@@ -20,16 +20,22 @@
                     <thead>
                     <tr>
                         <th>Node ID</th>
-                        <th>Node IP</th>
                         <th>Last available</th>
+                        <th>Actuators and sensors</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($devices as $device)
+                    @foreach($devices as $key => $device)
                         <tr>
-                            <td>{{$device.ip}}</td>
-                            <td>{{$device.ip}}</td>
-                            <td>{{$device.time}}</td>
+			    <td>{{$key}}</td>
+                            <td>{{$device->time}}</td>
+			    <td>
+			    <ul>
+			    @foreach($device->things as $thing)
+				<li>{{$thing->type}}</li>
+			    @endforeach
+			    <ul>
+			    </td>
                         </tr>
                     @endforeach
                     </tbody>
