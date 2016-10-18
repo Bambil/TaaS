@@ -32,13 +32,15 @@ class DockerHelper
 
         $apiKey = Uuid::generate();
 
+        $env = [];
         if (config('middleware.name') == 'I1820') {
-            $env = [];
             array_push($env, 'I1820_INFLUXDB_HOST=' . config('middleware.db_host'));
             array_push($env, 'I1820_MQTT_HOST=' . config('middleware.mqtt_host'));
             array_push($env, 'I1820_MQTT_PORT=' . config('middleware.mqtt_port'));
             array_push($env, 'I1820_ENDPOINTS=' . $apiKey);
         }
+
+	$containerConfig->setEnv($env);
 
         $containerCreateResult = $this->getManager()->create($containerConfig);
         $this->getManager()->start($containerCreateResult->getId());
