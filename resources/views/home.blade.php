@@ -42,13 +42,15 @@
         var app = new Vue({
             el: '#app',
 
+	    methods : {
             refresh: function () {
                 $.get('http://iot.ceit.aut.ac.ir:58902/discovery', function (data, status) {
                     app.devices = JSON.parse(data)
                 })
-            },
+            }
+},
 
-            created: function () {
+            mounted: function () {
                 this.refresh()
             },
 
