@@ -25,11 +25,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="device in devices">
-                        <td>@{{device.ip}}</td>
-                        <td>@{{device.ip}}</td>
-                        <td>@{{device.time}}</td>
-                    </tr>
+                    @foreach($devices as $device)
+                        <tr>
+                            <td>{{$device.ip}}</td>
+                            <td>{{$device.ip}}</td>
+                            <td>{{$device.time}}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -42,13 +44,13 @@
         var app = new Vue({
             el: '#app',
 
-	    methods : {
-            refresh: function () {
-                $.get('http://iot.ceit.aut.ac.ir:58902/discovery', function (data, status) {
-                    app.devices = JSON.parse(data)
-                })
-            }
-},
+            methods: {
+                refresh: function () {
+                    $.get('http://iot.ceit.aut.ac.ir:58902/discovery', function (data, status) {
+                        app.devices = JSON.parse(data)
+                    })
+                }
+            },
 
             mounted: function () {
                 this.refresh()
@@ -56,12 +58,9 @@
 
 
             data: {
-                devices: [
-                ],
+                devices: [],
             }
         })
-
-
 
 
     </script>
