@@ -27,15 +27,15 @@
                     <tbody>
                     @foreach($devices as $key => $device)
                         <tr>
-			    <td>{{$key}}</td>
+                            <td>{{$key}}</td>
                             <td>{{$device->time}}</td>
-			    <td>
-			    <ul>
-			    @foreach($device->things as $thing)
-				<li>{{$thing->type}}</li>
-			    @endforeach
-			    <ul>
-			    </td>
+                            <td>
+                                <ul>
+                                    @foreach($device->things as $thing)
+                                        <li>{{$thing->type}}</li>
+                                    @endforeach
+                                    <ul>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
