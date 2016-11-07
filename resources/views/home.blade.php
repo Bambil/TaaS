@@ -10,6 +10,8 @@
 
         <div class="tab-content">
             <div id="realtime-log" class="tab-pane fade in active">
+
+                <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>Key</th>
@@ -18,13 +20,17 @@
                 </thead>
                 <tbody>
                 @foreach($logs as $key => $value)
+		    @foreach($value as $sensor => $type)
                     <tr>
-                        <td>{{$key}}</td>
-                        <td>{{$value}}</td>
+                        <td>{{$sensor}}</td>
+                        <td>{{$type->value}}</td>
                     </tr>
+                    @endforeach
                 @endforeach
                 </tbody>
+</table>
             </div>
+		
             <div id="actuators" class="tab-pane fade">
                 <p>Some content in menu 1.</p>
             </div>
