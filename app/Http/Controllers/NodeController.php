@@ -57,8 +57,18 @@ class NodeController extends Controller
     public function show($id)
     {
         $dockerIp = $this->helper->findContainerIp($id);
-        $response = \Httpful\Request::get("http://" . $dockerIp . ":8080/discovery")->expectsJson()->send();
-        return view('home')->with('devices', $response->body);
+        $nodeList = \Httpful\Request::get("http://" . $dockerIp . ":8080/discovery")->expectsJson()->send();
+
+        foreach ($nodeList->body as $key => $value) {
+            foreach ($value->things as $thing) {
+                $params = ['node_id' => $key, 'type' => $thing->type, 'device_id' => $thing->device_id];
+                $thingData = \Httpful\Request::post($params, "http://" . $dockerIp . ":8080/discovery")->expectsJson()->send();
+                dd($thingData);
+            }
+
+        }
+
+        return view('home')->with('devices', $nodeList->body);
     }
 
     /**

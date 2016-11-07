@@ -10,7 +10,20 @@
 
         <div class="tab-content">
             <div id="realtime-log" class="tab-pane fade in active">
-                <p>Some content.</p>
+                <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($logs as $key => $value)
+                    <tr>
+                        <td>{{$key}}</td>
+                        <td>{{$value}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
             </div>
             <div id="actuators" class="tab-pane fade">
                 <p>Some content in menu 1.</p>
