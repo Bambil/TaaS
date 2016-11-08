@@ -58,13 +58,21 @@ class NodeController extends Controller
     {
         $dockerIp = $this->helper->findContainerIp($id);
         $nodeList = \Httpful\Request::get("http://" . $dockerIp . ":8080/discovery")->expectsJson()->send();
-        $thingData = [];
 
+        $thingData = [];
         foreach ($nodeList->body as $key => $value) {
             foreach ($value->things as $thing) {
                 $params = ['rpi_id' => $key, 'states' => [$thing->type], 'device_id' => $thing->id, 'type' => 'temperature'];
                 $newData = \Httpful\Request::post("http://" . $dockerIp . ":8080/thing", json_encode($params))->sendsJson()->send();
                 array_push($thingData, json_decode($newData->body));
+            }
+
+        }
+
+        $lamps = [];
+        foreach ($nodeList->body as $key => $value) {
+            foreach ($value->things as $thing) {
+                array_push($lamp, json_decode($newData->body));
             }
 
         }
