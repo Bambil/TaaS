@@ -1,65 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1>Node Information</h1>
     <div class="container">
-        <ul class="nav nav-pills">
-            <li class="active"><a data-toggle="pill" href="#realtime-log">RealTime Log</a></li>
-            <li><a data-toggle="pill" href="#actuators">Actuators</a></li>
-            <li><a data-toggle="pill" href="#node-list">Node List</a></li>
-        </ul>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Node List</button>
 
-        <div class="tab-content">
-            <div id="realtime-log" class="tab-pane fade in active">
+            <ul class="dropdown-menu">
+                <li v-for="node in nodeList">
+                    @{{ node }}
+                </li>
 
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Key</th>
-                        <th>Value</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($logs as $key => $value)
-                        @foreach($value as $sensor => $type)
-                            <tr>
-                                <td>{{$sensor}}</td>
-                                <td>{{$type->value}}</td>
-                            </tr>
-                        @endforeach
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="actuators" class="tab-pane fade">
-                <p>Some content in menu 1.</p>
-            </div>
-            <div id="node-list" class="tab-pane fade">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Node ID</th>
-                        <th>Last available</th>
-                        <th>Actuators and sensors</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($devices as $key => $device)
-                        <tr>
-                            <td>{{$key}}</td>
-                            <td>{{$device->time}}</td>
-                            <td>
-                                <ul>
-                                    @foreach($device->things as $thing)
-                                        <li>{{$thing->type}}</li>
-                                    @endforeach
-                                    <ul>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
+            </ul>
         </div>
     </div>
 @endsection
@@ -69,21 +21,20 @@
         var app = new Vue({
             el: '#app',
 
+            updated: function () {
+                app.refresh
+            },
+
             methods: {
                 refresh: function () {
-                    $.get('http://iot.ceit.aut.ac.ir:58902/discovery', function (data, status) {
-                        app.devices = JSON.parse(data)
+                    $.get('#', function (data, status) {
+                        app.nodeList = JSON.parse(data)
                     })
                 }
             },
 
-            mounted: function () {
-                this.refresh()
-            },
-
-
             data: {
-                devices: [],
+                nodeList: [],
             }
         })
 
