@@ -22,8 +22,6 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
-
             <nav class="navbar navbar-light bg-faded">
                 <a class="navbar-brand" href="#">
                     <img src="/images/TaaS.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -38,6 +36,7 @@
                 </div>
             </nav>
 
+        <div class="container container-default-padding">
             @yield('content')
         </div>
     </div>
