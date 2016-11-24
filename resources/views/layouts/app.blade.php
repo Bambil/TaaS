@@ -22,9 +22,9 @@
 </head>
 <body>
     <div id="app">
-        <example>
+        <navigation>
             <nav-item>Home</nav-item>
-        </example>
+        </navigation>
 
         <div class="container container-default-padding">
             @yield('content')
