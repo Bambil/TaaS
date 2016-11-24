@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<login url="{{ url('/login') }}" method="POST">
+<login url="{{ url('/login') }}" method="POST" title="Login">
     {{ csrf_field() }}
     <email >
         E-Mail Address
