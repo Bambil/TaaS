@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<login> </login>
+<login>
+    <email></email>
+    <password></password>
+</login>
 @endsection

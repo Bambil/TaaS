@@ -13,8 +13,14 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('login', require('./components/Login.vue'));
-Vue.component('Email', require('./components/Email.vue'));
+Vue.component('login', require('./components/login/Main.vue'));
+Vue.component('email', require('./components/login/Email.vue'));
+Vue.component('password', require('./components/login/Password.vue'));
+Vue.component('checkbox', require('./components/login/Checkbox.vue'));
+
+Vue.component('navigation', require('./components/navigation/Main.vue'));
+Vue.component('nav-item', require('./components/navigation/NavItem.vue'));
+Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
     el: '#app'

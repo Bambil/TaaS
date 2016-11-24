@@ -22,19 +22,9 @@
 </head>
 <body>
     <div id="app">
-            <nav class="navbar navbar-light bg-faded">
-                <a class="navbar-brand" href="#">
-                    <img src="/images/TaaS.png" width="30" height="30" class="d-inline-block align-top" alt="">
-
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Features</a>
-                    <a class="nav-item nav-link" href="#">Pricing</a>
-                    <a class="nav-item nav-link" href="#">About</a>
-                </div>
-            </nav>
+        <example>
+            <nav-item>Home</nav-item>
+        </example>
 
         <div class="container container-default-padding">
             @yield('content')
@@ -42,6 +32,8 @@
     </div>
 
     <!-- Scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
     <script src="/js/app.js"></script>
+
 </body>
 </html>
