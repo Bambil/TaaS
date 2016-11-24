@@ -24,6 +24,7 @@
     <div id="app">
         <navigation>
             <nav-item>Home</nav-item>
+            <nav-item>Akbar</nav-item>
         </navigation>
 
         <div class="container container-default-padding">
