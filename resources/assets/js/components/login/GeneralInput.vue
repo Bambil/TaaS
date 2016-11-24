@@ -20,9 +20,6 @@
 
 <script>
     export default {
-        props: ['url'],
-        mounted() {
-            console.log('Component ready.')
-        }
+        props: ['url']
     }
 </script>
