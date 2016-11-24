@@ -12,3 +12,8 @@
     </div>
 </template>
 
+<style scoped>
+.form-background {
+    background-color: #f7f7f7;
+}
+</style>
