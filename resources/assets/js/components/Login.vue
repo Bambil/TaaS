@@ -21,14 +21,7 @@
                         <form class=" form-horizontal" role="form" method="POST" action="http://localhost:8000/login">
                             <input type="hidden" name="_token" value="foYZBoOYhXLwuZDqA87gVl421BzySoAkEtLfqDuO">
 
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-
-                                </div>
-                            </div>
+                            <email></email>
 
                             <div class="form-group">
                                 <label for="password" class="col-md-4 control-label">Password</label>

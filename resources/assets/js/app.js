@@ -14,6 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('login', require('./components/Login.vue'));
+Vue.component('Email', require('./components/Email.vue'));
 
 const app = new Vue({
     el: '#app'
