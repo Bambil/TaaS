@@ -6,5 +6,7 @@
             <input id="password" type="password" class="form-control" name="password" required>
 
         </div>
+        <slot name="errors">
+        </slot>
     </div>
 </template>
