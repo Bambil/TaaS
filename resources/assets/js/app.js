@@ -18,10 +18,10 @@ Vue.component('email', require('./components/login/Email.vue'));
 Vue.component('password', require('./components/login/Password.vue'));
 Vue.component('checkbox', require('./components/login/Checkbox.vue'));
 Vue.component('submit', require('./components/login/Submit.vue'));
+Vue.component('error', require('./components/login/Error.vue'));
 
 Vue.component('navigation', require('./components/navigation/Main.vue'));
 Vue.component('nav-item', require('./components/navigation/NavItem.vue'));
-Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
     el: '#app'
