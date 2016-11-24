@@ -5,5 +5,6 @@
     <email></email>
     <password></password>
     <checkbox></checkbox>
+    <submit></submit>
 </login>
 @endsection
