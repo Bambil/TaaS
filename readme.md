@@ -12,5 +12,4 @@ Parham Alvani
 Iman Tabrizian
 
 ## Refrences
-AoLab  
 I1820
